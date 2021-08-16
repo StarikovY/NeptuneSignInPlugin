@@ -4,13 +4,13 @@
 
 
 module.exports = {
-    neptuneLogin: function (successCallback, errorCallback, [signer]) {
-        cordova.exec(successCallback,  errorCallback, "SignPlugin", "loginMethod", [signer]);
+    loginPIV: function (successCallback, errorCallback, [signer]) {
+        cordova.exec(successCallback,  errorCallback, "SignPlugin", "loginPIV", [signer]);
     },
-    neptuneSign: function (successCallback, errorCallback, [args]) {
-	cordova.exec(successCallback,  errorCallback, "SignPlugin", "signMethod", [args]);
+    signPIV: function (successCallback, errorCallback, [args]) {
+	cordova.exec(successCallback,  errorCallback, "SignPlugin", "signPIV", [args]);
     },
-    neptuneVerify: function (successCallback, errorCallback, [args]) {
-	cordova.exec(successCallback,  errorCallback, "SignPlugin", "verifyMethod", [args]);
+    verifyPIV: function (successCallback, errorCallback, [args]) {
+	cordova.exec(successCallback,  errorCallback, "SignPlugin", "verifyPIV", [args]);
     }
 };

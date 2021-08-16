@@ -36,41 +36,45 @@ This plugin implements a data signing API allowing to login and verify signature
 ## List of Errors raised by plugin
 When an error is thrown, one of these messages will be used:
 
-| ERRORS                            |
-|-----------------------------------|
-|    Unable to sign data            |
-|    Unable to login                |
-|    Unable to verify signature     |
-|				    |
+| ERRORS                            						|
+|-------------------------------------------------------------------------------|
+|    Unable to sign data. No result from method call            		|
+|    Unable to sign data. Inner exception on sign data operation        	|
+|    Unable to login. No result from method call                		|
+|    Unable to login. Inner exception on login operation                	|
+|    Unable to verify signature. No result from method call     		|
+|    Unable to verify signature. Inner exception on verify signature operation	|
 
 ## Signing Data: Signing data sample <a name="signdata"></a>
 
-The File plugin allows you to sign data. The code snippets in this section demonstrate this task:
+The File plugin allows you to sign data. On success it creates 'signed.sgn' file with data signature. 
+The code snippets in this section demonstrate this task:
 
-cordova.exec(success, errorstop, "SignPlugin", "signMethod", [signer, datatosign, true]);
+```js
 
-or
+cordova.plugins.SignPlugin.signPIV(success, errorstop, [signer, datatosign, true]);
 
-neptuneSign(success, errorstop, "SignPlugin", "signMethod", [signer, datatosign, true]);
-
+```
 
 ## Login: Login sample <a name="login"></a>
 
-The File plugin allows you to sign data. The code snippets in this section demonstrate this task:
+The File plugin allows you to sign data. On success it creates 'login.sgn' file.
+The code snippets in this section demonstrate this task:
 
-cordova.exec(success, errorstop, "SignPlugin", "loginMethod", [signer]);
+```js
 
-or
+cordova.plugins.SignPlugin.loginPIV(success, errorstop, [signer]);
 
-neptuneLogin(success, errorstop, "SignPlugin", "loginMethod", [signer]);
-
+```
 
 ## Verify Signature: Verify Signaturesample <a name="verify"></a>
 
-The File plugin allows you to verify signed data. The code snippets in this section demonstrate this task:
+The File plugin allows you to verify signed data. On success it creates 'result.vrf' file with 'true' or 'false' as result inside.
+The code snippets in this section demonstrate this task:
 
-cordova.exec(success, errorstop, "SignPlugin", "verifyMethod", [signer, signeddata, signature]);
+```js
 
-or
+cordova.plugins.SignPlugin.verifyPIV(success, errorstop, [signer, signeddata, signature]);
 
-neptuneVerify(success, errorstop, "SignPlugin", "verifyMethod", [signer, signeddata, signature]);
+```
+

@@ -20,6 +20,16 @@
 -->
 # Release Notes
 
+### 1.0.4 (Aug 16, 2021)
+
+* Function names changed
+* Module exports fixed
+* Readme.md file changed
+
+### 1.0.3 (Aug 05, 2021)
+
+* Readme.md file changed
+
 ### 1.0.2 (Aug 05, 2021)
 
 * Readme.md file added
