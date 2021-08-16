@@ -1,0 +1,22 @@
+{
+  "name": "neptune-sign-plugin",
+  "version": "1.0.4",
+  "description": "Digital signature with smartcatd.",
+  "homepage": "https://github.com/StarikovY/NeptuneSignInPlugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StarikovY/NeptuneSignInPlugin.git"
+  },
+  "cordova": {
+    "id": "neptune-sign-plugin",
+    "platforms": [
+      "windows"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-windows"
+  ],
+  "author": "Neptune Software",
+  "license": "ISC"
+}

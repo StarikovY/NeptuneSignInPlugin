@@ -1,0 +1,21 @@
+	<?xml version='1.0' encoding='utf-8'?>
+<plugin id="neptune-sign-plugin" version="1.0.4" xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+        >
+    <name>SignPlugin</name>
+    <js-module name="SignPlugin" src="www/SignPlugin.js">
+        <clobbers target="cordova.plugins.SignPlugin" />
+    </js-module>
+    
+    <platform name="windows">
+        <js-module name="SignPluginProxy" src="src/windows/SignPluginProxy.js">
+            <runs target="" />
+        </js-module>
+
+        <config-file target="package.windows10.appxmanifest" parent="/Package/Capabilities">
+          <uap:Capability Name="sharedUserCertificates" />
+        </config-file>
+        <framework src="src/windows/cpp-cli/SignFileComponent.winmd" arch="x86" custom="true" implementation="src/windows/cpp-cli/SignFileComponent.dll"/>
+    </platform>
+</plugin>
